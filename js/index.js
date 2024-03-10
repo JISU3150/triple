@@ -78,6 +78,7 @@ $(function () {
   let num = 0;
   let xnum = 0;
   let idx = 0;
+  let idx2 = 0;
   let delta;
   let isScrolling = false;
 
@@ -152,18 +153,13 @@ $(function () {
           mainBorder.style.width = `${100 - num * 10}%`;
           mainBorder.style.height = `${100 - num * 10}%`;
           mainBorder.style.borderRadius = `${num}vw`;
-          visual.style.position = "fixed";
         }
         if (num === 8) {
           mainBorder.style.opacity = "0";
-          visual.style.position = "fixed";
         }
         /*con1 interaction*/
         if (num === 10) {
           con1Graph.classList.add("active");
-          con1.style.position = "fixed";
-          con1.style.left = "0%";
-          con1.style.top = "0%";
           /*con1 그래프 숫자 카운트*/
           setTimeout(function () {
             let time = setInterval(function () {
@@ -226,177 +222,179 @@ $(function () {
         /*con2 interaction*/
         if (num === 12) {
           con2Text.classList.add("active");
-          con2.style.position = "fixed";
-          con2.style.left = "0%";
-          con2.style.top = "0%";
         }
         if (num === 13) {
           scrollBar.classList.add("on");
           con2List.classList.add("show");
-          con2.style.position = "fixed";
-          con2.style.left = "0%";
-          con2.style.top = "0%";
         }
         /*con3 interaction*/
         if (num === 15) {
           con3Con.classList.add("on");
-          con3.style.position = "fixed";
-          con3.style.left = "0%";
-          con3.style.top = "0%";
         }
         if (num >= 16 && num <= 21) {
-          con3.style.position = "fixed";
-          con3.style.left = "0%";
-          con3.style.top = "0%";
           xnum++;
           con3Slide.style.transform = `translateX(${-xnum * 8.3}%)`;
           con3Bar.style.width = ` ${20 + xnum * 14}%`;
         }
-      }
-      /*con4 interaction*/
-      if (num === 23) {
-        con4.style.position = "fixed";
-        con4.style.left = "0%";
-        con4.style.top = "0%";
-        con4Text.classList.add("on");
-      }
-      if (num === 24) {
-        con4.style.position = "fixed";
-        con4.style.left = "0%";
-        con4.style.top = "0%";
-        con4Box.classList.add("on");
-        con4Tab[0].classList.add("on");
-      }
-      /*con5 interaction*/
-      if (num === 26) {
-        con5.style.position = "fixed";
-        con5.style.left = "0%";
-        con5.style.top = "0%";
-        con5Text.classList.add("on");
-      }
-      /*visual -> con1*/
-      if (num === 9 && idx < elMainCon.length) {
-        idx++;
-        visual.style.position = "";
-        setTimeout(function () {
+        /*con4 interaction*/
+        if (num === 23) {
+          con4Text.classList.add("on");
+        }
+        if (num === 24) {
+          con4Box.classList.add("on");
+          con4Tab[0].classList.add("on");
+        }
+        /*con5 interaction*/
+        if (num === 26) {
+          con5Text.classList.add("on");
+        }
+
+        /*visual -> con1*/
+        if (num === 9 && idx < elMainCon.length) {
+          idx++;
           con1Back.classList.add("on");
-          con1.style.position = "fixed";
-          con1.style.left = "0";
-          con1.style.top = "0";
           setTimeout(function () {
             header.style.display = "flex";
           }, 500);
-        }, 200);
+        }
+        /*con1 -> con2*/
+        if (num === 11 && idx < elMainCon.length) {
+          idx++;
+          setTimeout(function () {
+            con2Back.classList.add("on");
+            logoBlack.style.display = "none";
+            logoWhite.style.display = "block";
+            logB.style.display = "none";
+            logW.style.display = "block";
+          }, 500);
+        }
+        /*con2 -> con3*/
+        if (num === 14 && idx < elMainCon.length) {
+          idx++;
+          setTimeout(function () {
+            logoBlack.style.display = "block";
+            logoWhite.style.display = "none";
+            logB.style.display = "block";
+            logW.style.display = "none";
+          }, 500);
+          setTimeout(function () {
+            con3Text.classList.add("on");
+          }, 1000);
+        }
+        /*con3 -> con4*/
+        if (num === 22 && idx < elMainCon.length) {
+          idx++;
+        }
+        /*con4 -> con5*/
+        if (num === 25 && idx < elMainCon.length) {
+          idx++;
+          header.style.display = "none";
+          setTimeout(function () {
+            con5Membership.classList.add("on");
+          }, 700);
+        }
+        /*con5 -> footer*/
+        if (num === 27) {
+          idx++;
+          e.preventDefault();
+        }
       }
-      /*con1 -> con2*/
-      if (num === 11 && idx < elMainCon.length) {
-        idx++;
-        con1.style.position = "";
-        con1.style.left = "";
-        con1.style.top = "";
-        setTimeout(function () {
-          con2Back.classList.add("on");
+    } else if (delta < 0) {
+      if (!(num === 0)) {
+        num--;
+
+        /*visual interaction*/
+        if (num === 1) {
+          mainBorder.style.borderRadius = `${num}vw`;
+        }
+        if (num < 7) {
+          mainBorder.style.width = `${100 - num * 10}%`;
+          mainBorder.style.height = `${100 - num * 10}%`;
+        }
+        if (num === 7) {
+          mainBorder.style.opacity = "1";
+        }
+
+        /*con1 interaction wheelup*/
+        if (num === 9) {
+          con1Graph.classList.remove("active");
+        }
+
+        /*con2 interaction wheelup*/
+        if (num === 11) {
+          con2Text.classList.remove("active");
+        }
+        if (num === 12) {
+          scrollBar.classList.remove("on");
+          con2List.classList.remove("show");
+        }
+
+        /*con3 interaction wheelup*/
+        if (num === 14) {
+          con3Con.classList.remove("on");
+        }
+        if (num >= 15 && num <= 20) {
+          xnum--;
+          con3Slide.style.transform = `translateX(${-xnum * 8.3}%)`;
+          con3Bar.style.width = ` ${20 + xnum * 14}%`;
+        }
+
+        /*con4 interaction wheelup*/
+        if (num === 22) {
+          con4Text.classList.remove("on");
+        }
+        if (num === 23) {
+          con4Box.classList.remove("on");
+          con4Tab[0].classList.remove("on");
+        }
+
+        /*con1 -> visual*/
+        if (num === 8) {
+          idx--;
+          con1Back.classList.remove("on");
+          setTimeout(function () {
+            header.style.display = "none";
+          }, 500);
+        }
+
+        /*con2 -> con1*/
+        if (num === 10) {
+          idx--;
+          con2Back.classList.remove("on");
+          logoBlack.style.display = "block";
+          logoWhite.style.display = "none";
+          logB.style.display = "block";
+          logW.style.display = "none";
+        }
+
+        /*con3 -> con2*/
+        if (num === 13) {
+          idx--;
+          con3Text.classList.remove("on");
           logoBlack.style.display = "none";
           logoWhite.style.display = "block";
           logB.style.display = "none";
           logW.style.display = "block";
-          con2.style.position = "fixed";
-          con2.style.left = "0";
-          con2.style.top = "0";
-        }, 200);
-      }
-      /*con2 -> con3*/
-      if (num === 14 && idx < elMainCon.length) {
-        idx++;
-        con2.style.position = "";
-        con2.style.left = "";
-        con2.style.top = "";
-        logoBlack.style.display = "block";
-        logoWhite.style.display = "none";
-        logB.style.display = "block";
-        logW.style.display = "none";
-        setTimeout(function () {
-          con3.style.position = "fixed";
-          con3.style.left = "0";
-          con3.style.top = "0";
-          setTimeout(function () {
-            con3Text.classList.add("on");
-          }, 300);
-        }, 700);
-      }
-      /*con3 -> con4*/
-      if (num === 22 && idx < elMainCon.length) {
-        idx++;
-        con3.style.position = "";
-        con3.style.left = "";
-        con3.style.top = "";
-        setTimeout(function () {
-          con4.style.position = "fixed";
-          con4.style.left = "0";
-          con4.style.top = "0";
-        }, 700);
-      }
-      /*con4 -> con5*/
-      if (num === 25 && idx < elMainCon.length) {
-        idx++;
-        con4.style.position = "";
-        con4.style.left = "";
-        con4.style.top = "";
-        header.style.display = "none";
-        setTimeout(function () {
-          con5.style.position = "fixed";
-          con5.style.left = "0";
-          con5.style.top = "0";
-          setTimeout(function () {
-            con5Membership.classList.add("on");
-          }, 10);
-        }, 700);
-      }
-      /*con5 -> footer*/
-      if (num === 27) {
-        idx++;
-        e.preventDefault();
-        setTimeout(function () {
-          con5.style.position = "";
-          con5.style.left = "";
-          con5.style.top = "";
-        }, 400);
-      }
-    } else if (delta < 0) {
-      if (!(idx === 0)) {
-        idx--;
-      }
-      if (num > 0 && idx === 0) {
-        num--;
-        /*visual interaction wheelup*/
-        if (num <= 7) {
-          mainBorder.style.width = `${100 - num * 10}%`;
-          mainBorder.style.height = `${100 - num * 10}%`;
-          if (num === 1) {
-            mainBorder.style.borderRadius = `${num}vw`;
-          }
         }
-        if (num !== 8) {
-          mainBorder.style.opacity = "1";
-        }
-        /*con1 interaction wheelup*/
-        if (num !== 10) {
-          idx++;
-          con1Graph.classList.remove("active");
-        }
-        /*con1 -> visual*/
-        if (num !== 9 && idx < elMainCon.length) {
+
+        /*con4 -> con3*/
+        if (num === 21) {
           idx--;
-          con1Back.classList.remove("on");
-          header.style.display = "none";
-          setTimeout(function () {
-            visual.style.position = "fixed";
-            setTimeout(function () {
-              con1.style.position = "";
-              con1.style.left = "";
-              con1.style.top = "";
-            }, 500);
-          }, 700);
+        }
+
+        /*con5 -> con4*/
+        if (num === 24) {
+          idx--;
+          header.style.display = "flex";
+          con5Membership.classList.remove("on");
+        }
+
+        /*footer -> con5*/
+        if (num === 26) {
+          idx--;
+        } else if (num === 25) {
+          /*con5 interaction wheelup*/
+          con5Text.classList.remove("on");
         }
       }
     }
