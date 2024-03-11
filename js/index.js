@@ -78,7 +78,6 @@ $(function () {
   let num = 0;
   let xnum = 0;
   let idx = 0;
-  let idx2 = 0;
   let delta;
   let isScrolling = false;
 
@@ -435,4 +434,25 @@ $(function () {
     requestAnimationFrame(animateScroll);
   }
   window.addEventListener("wheel", handleWheel, { passive: true });
+
+  // 터치 이벤트 핸들러 추가
+  let startY;
+  let endY;
+
+  window.addEventListener("touchstart", function (e) {
+    startY = e.touches[0].clientY;
+  });
+
+  window.addEventListener("touchend", function (e) {
+    endY = e.changedTouches[0].clientY;
+    let touchDelta = startY - endY;
+
+    if (touchDelta > 50) {
+      // Swipe up
+      handleScroll({ deltaY: 100 });
+    } else if (touchDelta < -50) {
+      // Swipe down
+      handleScroll({ deltaY: -100 });
+    }
+  });
 });
