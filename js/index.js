@@ -85,14 +85,7 @@ $(function () {
   let review = 0;
   let plan = 150;
 
-  const elMainCon = document.querySelectorAll(".con"),
-    visual = document.querySelector("#visual"),
-    con1 = document.querySelector(".con1"),
-    con2 = document.querySelector(".con2"),
-    con3 = document.querySelector(".con3"),
-    con4 = document.querySelector(".con4"),
-    con5 = document.querySelector(".con5"),
-    footer = document.querySelector("footer");
+  const elMainCon = document.querySelectorAll(".con");
 
   const header = document.querySelector("header"),
     logoBlack = document.querySelector(".logo_b"),
@@ -130,20 +123,22 @@ $(function () {
   const con5Membership = document.querySelector(".membership"),
     con5Text = document.querySelector(".con5_text");
 
-  function handleWheel(e) {
+  function handleScroll(e) {
     delta = e.deltaY;
 
     if (!isScrolling) {
       isScrolling = true;
 
       requestAnimationFrame(() => {
-        handleScroll(e);
+        if (!isTouchPad) {
+          handleEffects(e);
+        }
         isScrolling = false;
       });
     }
   }
 
-  function handleScroll(e) {
+  function handleEffects(e) {
     if (delta > 0) {
       if (!(num === 28)) {
         num++;
@@ -297,6 +292,7 @@ $(function () {
           idx++;
           e.preventDefault();
         }
+        // applyEffects();
       }
     } else if (delta < 0) {
       if (!(num === 0)) {
@@ -395,6 +391,7 @@ $(function () {
           /*con5 interaction wheelup*/
           con5Text.classList.remove("on");
         }
+        applyEffects();
       }
     }
 
@@ -433,26 +430,44 @@ $(function () {
 
     requestAnimationFrame(animateScroll);
   }
-  window.addEventListener("wheel", handleWheel, { passive: true });
+
+  function applyEffects() {
+    // delta 값에 따라서 효과 적용
+    // 코드 중략...
+  }
+
+  window.addEventListener("wheel", handleScroll, { passive: true });
 
   // 터치 이벤트 핸들러 추가
-  let startY;
-  let endY;
 
-  window.addEventListener("touchstart", function (e) {
-    startY = e.touches[0].clientY;
-  });
+  let isTouchPad = false;
 
-  window.addEventListener("touchend", function (e) {
-    endY = e.changedTouches[0].clientY;
-    let touchDelta = startY - endY;
+  window.addEventListener(
+    "touchstart",
+    function (e) {
+      isTouchPad = true;
+      touchStartY = e.touches[0].clientY;
+      console.log(touchStartY);
+    },
+    { passive: true }
+  );
 
-    if (touchDelta > 50) {
-      // Swipe up
-      handleScroll({ deltaY: 100 });
-    } else if (touchDelta < -50) {
-      // Swipe down
-      handleScroll({ deltaY: -100 });
-    }
-  });
+  window.addEventListener(
+    "touchend",
+    function () {
+      // e.preventDefault();
+      isTouchPad = false;
+    },
+    { passive: true }
+  );
+
+  window.addEventListener(
+    "touchmove",
+    function (e) {
+      if (isTouchPad) {
+        handleScroll(e);
+      }
+    },
+    { passive: true }
+  );
 });

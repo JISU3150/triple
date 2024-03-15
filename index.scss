@@ -34,8 +34,20 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
 /*pc*/
+@media all and (min-width: 1221px) {
+}
 /*tablet*/
+@media (min-width: 768px) and (max-width: 1220px) {
+}
+/*mobile*/
+@media (min-width: 391px) and (max-width: 767px) {
+}
+/*iphone 12pro*/
+@media (max-width: 390px) {
+}
+
 /*header*/
 header {
   width: 100%;
