@@ -295,7 +295,7 @@ $(function () {
             }
 
             /*con1 12pro 반응형*/
-            if (media < 768) {
+            if (media < 391) {
               travelImg.addEventListener("mouseenter", function () {
                 this.style.width = "16vw";
                 this.style.transition = "0.5s";
