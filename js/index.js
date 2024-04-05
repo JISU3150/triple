@@ -40,6 +40,27 @@ $(function () {
       modalText[i].classList.remove("on");
     });
   }
+  /*con2 modal 12pro 반응형*/
+  let media = $(window).width();
+  if (media < 391) {
+    for (let i = 0; i < cardCount; i++) {
+      card[i].addEventListener("click", function () {
+        modal[i].style.display = "block";
+        isScrolling = true;
+        setTimeout(function () {
+          modalImg[i].classList.add("on");
+          modalText[i].classList.add("on");
+        }, 200);
+      });
+
+      modal[i].addEventListener("click", function () {
+        isScrolling = false;
+        modal[i].style.display = "none";
+        modalImg[i].classList.remove("on");
+        modalText[i].classList.remove("on");
+      });
+    }
+  }
 
   con2Scroll.addEventListener("mouseover", function () {
     scrollText.classList.add("on");
@@ -123,25 +144,442 @@ $(function () {
   const con5Membership = document.querySelector(".membership"),
     con5Text = document.querySelector(".con5_text");
 
-  function handleScroll(e) {
+  function handleWheel(e) {
     delta = e.deltaY;
 
     if (!isScrolling) {
       isScrolling = true;
 
       requestAnimationFrame(() => {
-        if (!isTouchPad) {
-          handleEffects(e);
-        }
+        handleScroll(e);
         isScrolling = false;
       });
     }
   }
 
-  function handleEffects(e) {
+  function handleScroll(e) {
     if (delta > 0) {
       if (!(num === 28)) {
         num++;
+        /*visual interaction*/
+        if (num <= 7) {
+          mainBorder.style.width = `${100 - num * 10}%`;
+          mainBorder.style.height = `${100 - num * 10}%`;
+          mainBorder.style.borderRadius = `${num}vw`;
+        }
+        if (num === 8) {
+          mainBorder.style.opacity = "0";
+        }
+        /*con1 interaction*/
+        if (num === 10) {
+          con1Graph.classList.add("active");
+          /*con1 그래프 숫자 카운트*/
+          setTimeout(function () {
+            let time = setInterval(function () {
+              traveler += 10;
+              if (traveler >= 790) {
+                clearInterval(time);
+              } else {
+                travelerCount.innerHTML = traveler;
+              }
+            }, 50);
+            let time2 = setInterval(function () {
+              review += 5;
+              if (review >= 115) {
+                clearInterval(time2);
+              } else {
+                reviewCount.innerHTML = review;
+              }
+            }, 70);
+            let time3 = setInterval(function () {
+              plan += 10;
+              if (plan >= 600) {
+                clearInterval(time3);
+              } else {
+                planCount.innerHTML = plan;
+              }
+            }, 50);
+            /*con1 그래프 바 자동 애니매이션*/
+            travelerBar.classList.add("on");
+            reviewBar.classList.add("on");
+            planBar.classList.add("on");
+            travelImg.classList.add("active");
+            travelImg.addEventListener("mouseenter", function () {
+              this.style.width = "11vw";
+              this.style.transition = "0.5s";
+            });
+            travelImg.addEventListener("mouseleave", function () {
+              this.style.width = "10vw";
+              this.style.transition = "0.5s";
+            });
+            reviewImg.classList.add("active");
+            reviewImg.addEventListener("mouseenter", function () {
+              this.style.width = "10vw";
+              this.style.transition = "0.5s";
+            });
+            reviewImg.addEventListener("mouseleave", function () {
+              this.style.width = "9vw";
+              this.style.transition = "0.5s";
+            });
+            planImg.classList.add("active");
+            planImg.addEventListener("mouseenter", function () {
+              this.style.width = "12vw";
+              this.style.transition = "0.5s";
+            });
+            planImg.addEventListener("mouseleave", function () {
+              this.style.width = "11vw";
+              this.style.transition = "0.5s";
+            });
+
+            /*con1 tablet 반응형*/
+            let media = $(window).width();
+            if (media < 1141 && media >= 768) {
+              travelImg.addEventListener("mouseenter", function () {
+                this.style.width = "15vw";
+                this.style.transition = "0.5s";
+              });
+              travelImg.addEventListener("mouseleave", function () {
+                this.style.width = "14vw";
+                this.style.transition = "0.5s";
+              });
+              reviewImg.addEventListener("mouseenter", function () {
+                this.style.width = "15vw";
+                this.style.transition = "0.5s";
+              });
+              reviewImg.addEventListener("mouseleave", function () {
+                this.style.width = "14vw";
+                this.style.transition = "0.5s";
+              });
+              planImg.addEventListener("mouseenter", function () {
+                this.style.width = "15vw";
+                this.style.transition = "0.5s";
+              });
+              planImg.addEventListener("mouseleave", function () {
+                this.style.width = "14vw";
+                this.style.transition = "0.5s";
+              });
+            }
+
+            /*con1 mobile 반응형*/
+            if (media < 768) {
+              travelerBar.classList.add("active");
+              travelerBar.classList.remove("on");
+              reviewBar.classList.add("active");
+              reviewBar.classList.remove("on");
+              planBar.classList.add("active");
+              planBar.classList.remove("on");
+              travelImg.addEventListener("mouseenter", function () {
+                this.style.width = "11vw";
+                this.style.transition = "0.5s";
+              });
+              travelImg.addEventListener("mouseleave", function () {
+                this.style.width = "10vw";
+                this.style.transition = "0.5s";
+              });
+              reviewImg.addEventListener("mouseenter", function () {
+                this.style.width = "11vw";
+                this.style.transition = "0.5s";
+              });
+              reviewImg.addEventListener("mouseleave", function () {
+                this.style.width = "10vw";
+                this.style.transition = "0.5s";
+              });
+              planImg.addEventListener("mouseenter", function () {
+                this.style.width = "11vw";
+                this.style.transition = "0.5s";
+              });
+              planImg.addEventListener("mouseleave", function () {
+                this.style.width = "10vw";
+                this.style.transition = "0.5s";
+              });
+            }
+
+            /*con1 12pro 반응형*/
+            if (media < 768) {
+              travelImg.addEventListener("mouseenter", function () {
+                this.style.width = "16vw";
+                this.style.transition = "0.5s";
+              });
+              travelImg.addEventListener("mouseleave", function () {
+                this.style.width = "15vw";
+                this.style.transition = "0.5s";
+              });
+              reviewImg.addEventListener("mouseenter", function () {
+                this.style.width = "16vw";
+                this.style.transition = "0.5s";
+              });
+              reviewImg.addEventListener("mouseleave", function () {
+                this.style.width = "15vw";
+                this.style.transition = "0.5s";
+              });
+              planImg.addEventListener("mouseenter", function () {
+                this.style.width = "16vw";
+                this.style.transition = "0.5s";
+              });
+              planImg.addEventListener("mouseleave", function () {
+                this.style.width = "15vw";
+                this.style.transition = "0.5s";
+              });
+            }
+          }, 300);
+        }
+        /*con2 interaction*/
+        if (num === 12) {
+          con2Text.classList.add("active");
+        }
+        if (num === 13) {
+          scrollBar.classList.add("on");
+          con2List.classList.add("show");
+        }
+        /*con3 interaction*/
+        if (num === 15) {
+          con3Con.classList.add("on");
+        }
+        if (num >= 16 && num <= 21) {
+          xnum++;
+          con3Slide.style.transform = `translateX(${-xnum * 8.3}%)`;
+          con3Bar.style.width = ` ${20 + xnum * 14}%`;
+
+          /*con3 tablet 반응형*/
+          let media = $(window).width();
+          if (media < 1141 && media >= 768) {
+            con3Slide.style.transform = `translateX(${-xnum * 9.5}%)`;
+          }
+          /*con3 mobile 반응형*/
+          if (media < 768) {
+            con3Slide.style.transform = `translateX(${-xnum * 11.5}%)`;
+          }
+          /*con3 12pro 반응형*/
+          if (media < 391) {
+            con3Slide.style.transform = `translateX(${-xnum * 12.8}%)`;
+          }
+        }
+        /*con4 interaction*/
+        if (num === 23) {
+          con4Text.classList.add("on");
+        }
+        if (num === 24) {
+          con4Box.classList.add("on");
+          con4Tab[0].classList.add("on");
+        }
+        /*con5 interaction*/
+        if (num === 26) {
+          con5Text.classList.add("on");
+        }
+
+        /*visual -> con1*/
+        if (num === 9 && idx < elMainCon.length) {
+          idx++;
+          con1Back.classList.add("on");
+          setTimeout(function () {
+            header.style.display = "flex";
+          }, 500);
+        }
+        /*con1 -> con2*/
+        if (num === 11 && idx < elMainCon.length) {
+          idx++;
+          setTimeout(function () {
+            con2Back.classList.add("on");
+            logoBlack.style.display = "none";
+            logoWhite.style.display = "block";
+            logB.style.display = "none";
+            logW.style.display = "block";
+          }, 500);
+        }
+        /*con2 -> con3*/
+        if (num === 14 && idx < elMainCon.length) {
+          idx++;
+          setTimeout(function () {
+            logoBlack.style.display = "block";
+            logoWhite.style.display = "none";
+            logB.style.display = "block";
+            logW.style.display = "none";
+          }, 500);
+          setTimeout(function () {
+            con3Text.classList.add("on");
+          }, 1000);
+        }
+        /*con3 -> con4*/
+        if (num === 22 && idx < elMainCon.length) {
+          idx++;
+        }
+        /*con4 -> con5*/
+        if (num === 25 && idx < elMainCon.length) {
+          idx++;
+          header.style.display = "none";
+          setTimeout(function () {
+            con5Membership.classList.add("on");
+          }, 700);
+        }
+        /*con5 -> footer*/
+        if (num === 27) {
+          idx++;
+          e.preventDefault();
+        }
+      }
+    } else if (delta < 0) {
+      if (!(num === 0)) {
+        num--;
+
+        /*visual interaction*/
+        if (num === 1) {
+          mainBorder.style.borderRadius = `${num}vw`;
+        }
+        if (num < 7) {
+          mainBorder.style.width = `${100 - num * 10}%`;
+          mainBorder.style.height = `${100 - num * 10}%`;
+        }
+        if (num === 7) {
+          mainBorder.style.opacity = "1";
+        }
+
+        /*con1 interaction wheelup*/
+        if (num === 9) {
+          con1Graph.classList.remove("active");
+        }
+
+        /*con2 interaction wheelup*/
+        if (num === 11) {
+          con2Text.classList.remove("active");
+        }
+        if (num === 12) {
+          scrollBar.classList.remove("on");
+          con2List.classList.remove("show");
+        }
+
+        /*con3 interaction wheelup*/
+        if (num === 14) {
+          con3Con.classList.remove("on");
+        }
+        if (num >= 15 && num <= 20) {
+          xnum--;
+          con3Slide.style.transform = `translateX(${-xnum * 8.3}%)`;
+          con3Bar.style.width = ` ${20 + xnum * 14}%`;
+        }
+
+        /*con4 interaction wheelup*/
+        if (num === 22) {
+          con4Text.classList.remove("on");
+        }
+        if (num === 23) {
+          con4Box.classList.remove("on");
+          con4Tab[0].classList.remove("on");
+        }
+
+        /*con1 -> visual*/
+        if (num === 8) {
+          idx--;
+          con1Back.classList.remove("on");
+          setTimeout(function () {
+            header.style.display = "none";
+          }, 500);
+        }
+
+        /*con2 -> con1*/
+        if (num === 10) {
+          idx--;
+          con2Back.classList.remove("on");
+          logoBlack.style.display = "block";
+          logoWhite.style.display = "none";
+          logB.style.display = "block";
+          logW.style.display = "none";
+        }
+
+        /*con3 -> con2*/
+        if (num === 13) {
+          idx--;
+          con3Text.classList.remove("on");
+          logoBlack.style.display = "none";
+          logoWhite.style.display = "block";
+          logB.style.display = "none";
+          logW.style.display = "block";
+        }
+
+        /*con4 -> con3*/
+        if (num === 21) {
+          idx--;
+        }
+
+        /*con5 -> con4*/
+        if (num === 24) {
+          idx--;
+          header.style.display = "flex";
+          con5Membership.classList.remove("on");
+        }
+
+        /*footer -> con5*/
+        if (num === 26) {
+          idx--;
+        } else if (num === 25) {
+          /*con5 interaction wheelup*/
+          con5Text.classList.remove("on");
+        }
+      }
+    }
+
+    let htmlBody = document.querySelector("html, body");
+
+    let scrollHeight = window.innerHeight * idx;
+
+    // 애니메이션 속성
+    let animationOptions = {
+      duration: 800,
+      easing: "swing",
+    };
+
+    function animateScroll(timestamp) {
+      if (!startTime) startTime = timestamp;
+      let progress = timestamp - startTime;
+
+      let percentage = Math.min(progress / animationOptions.duration, 1);
+      let ease = 0.5 - Math.cos(percentage * Math.PI) / 2;
+
+      let newScrollTop =
+        ease * (scrollHeight - startScrollTop) + startScrollTop;
+      // console.log(startScrollTop);
+
+      htmlBody.scrollTop = newScrollTop;
+
+      if (progress < animationOptions.duration) {
+        requestAnimationFrame(animateScroll);
+      }
+    }
+
+    // 애니메이션을 시작하기 전 초기 상태를 저장
+    let startTime = null;
+
+    let startScrollTop = htmlBody.scrollTop;
+
+    requestAnimationFrame(animateScroll);
+  }
+  window.addEventListener("wheel", handleWheel, { passive: true });
+
+  // 터치 이벤트 핸들러 추가
+
+  let touchStartY = 0; // 터치 시작 지점
+  let deltaY; // 터치의 delta
+  let isTrackPad;
+
+  function touchWheel(e) {
+    deltaY = e.deltaY;
+
+    if (!isTrackPad) {
+      isTrackPad = true;
+
+      requestAnimationFrame(() => {
+        applyEffects(e);
+        isTrackPad = false;
+      });
+    }
+  }
+
+  function applyEffects(e) {
+    // 현재 터치 지점과 시작 지점의 차이 계산
+    let deltaY = e.touches[0].clientY - touchStartY;
+    if (deltaY > 0) {
+      if (!(num === 28)) {
+        num++;
+        console.log("함수탐");
         /*visual interaction*/
         if (num <= 7) {
           mainBorder.style.width = `${100 - num * 10}%`;
@@ -292,12 +730,10 @@ $(function () {
           idx++;
           e.preventDefault();
         }
-        // applyEffects();
       }
-    } else if (delta < 0) {
+    } else if (deltaY < 0) {
       if (!(num === 0)) {
         num--;
-
         /*visual interaction*/
         if (num === 1) {
           mainBorder.style.borderRadius = `${num}vw`;
@@ -391,83 +827,8 @@ $(function () {
           /*con5 interaction wheelup*/
           con5Text.classList.remove("on");
         }
-        applyEffects();
       }
     }
-
-    let htmlBody = document.querySelector("html, body");
-
-    let scrollHeight = window.innerHeight * idx;
-
-    // 애니메이션 속성
-    let animationOptions = {
-      duration: 800,
-      easing: "swing",
-    };
-
-    function animateScroll(timestamp) {
-      if (!startTime) startTime = timestamp;
-      let progress = timestamp - startTime;
-
-      let percentage = Math.min(progress / animationOptions.duration, 1);
-      let ease = 0.5 - Math.cos(percentage * Math.PI) / 2;
-
-      let newScrollTop =
-        ease * (scrollHeight - startScrollTop) + startScrollTop;
-      // console.log(startScrollTop);
-
-      htmlBody.scrollTop = newScrollTop;
-
-      if (progress < animationOptions.duration) {
-        requestAnimationFrame(animateScroll);
-      }
-    }
-
-    // 애니메이션을 시작하기 전 초기 상태를 저장
-    let startTime = null;
-
-    let startScrollTop = htmlBody.scrollTop;
-
-    requestAnimationFrame(animateScroll);
   }
-
-  function applyEffects() {
-    // delta 값에 따라서 효과 적용
-    // 코드 중략...
-  }
-
-  window.addEventListener("wheel", handleScroll, { passive: true });
-
-  // 터치 이벤트 핸들러 추가
-
-  let isTouchPad = false;
-
-  window.addEventListener(
-    "touchstart",
-    function (e) {
-      isTouchPad = true;
-      touchStartY = e.touches[0].clientY;
-      console.log(touchStartY);
-    },
-    { passive: true }
-  );
-
-  window.addEventListener(
-    "touchend",
-    function () {
-      // e.preventDefault();
-      isTouchPad = false;
-    },
-    { passive: true }
-  );
-
-  window.addEventListener(
-    "touchmove",
-    function (e) {
-      if (isTouchPad) {
-        handleScroll(e);
-      }
-    },
-    { passive: true }
-  );
+  window.addEventListener("touchmove", touchWheel, { passive: true });
 });
