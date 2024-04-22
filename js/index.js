@@ -1,6 +1,7 @@
 $(function () {
   $("html, body").animate({ scrollTop: 0 }, "slow");
   $("html, body").css({ overflowY: "hidden" });
+  // alert("wheelEvent를 이용한 작업물입니다. 휠마다의 인터랙션을 느껴보세요!");
 
   /*메인 바 자동 애니이션*/
   let mainCenter = document.querySelector(".center_wrap");

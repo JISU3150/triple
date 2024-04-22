@@ -1417,7 +1417,7 @@ body {
     transition-delay: 0.3s;
   }
   .con5 .con5_right .con5_text .con5_btn {
-    width: 7vw;
+    width: 17vw;
     height: 3.7vh;
     margin: 0px auto;
     opacity: 0;
@@ -1425,25 +1425,79 @@ body {
     transition: 0.5s;
     transition-delay: 0.6s;
   }
-  .con5 .con5_right .con5_text .con5_btn a {
+  .con5 .con5_right .con5_text .con5_btn .download {
     width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 3.7vh;
-    background: #fff;
-    border: 1px solid #2987f0;
-    text-align: center;
-    line-height: 3.5vh;
-    font-size: 0.8vw;
-    color: #2987f0;
-    box-shadow: 1px 1px 1px 1px #ededed;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 90;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google {
+    width: calc(50% - 0.7vw);
+    height: 4vh;
+    border-radius: 3vh;
+    background: #09d0af;
     transition: 0.5s;
   }
-  .con5 .con5_right .con5_text .con5_btn a:hover {
-    font-size: 0.9vw;
-    transform: scale(1.1);
-    background: #2987f0;
+  .con5 .con5_right .con5_text .con5_btn .download .google a {
+    width: 100%;
+    height: 100%;
+    display: flex;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 3.5vh;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google a img {
+    width: 0.8vw;
+    margin-right: 0.5vw;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google a p {
+    font-size: 0.9vw;
+    line-height: 4vh;
+    margin-bottom: 0;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google:hover {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google:hover a {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple {
+    width: calc(50% - 0.7vw);
+    height: 4vh;
+    border-radius: 3vh;
+    background: #09d0af;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 3.5vh;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a img {
+    width: 0.8vw;
+    margin-right: 0.5vw;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a p {
+    font-size: 0.9vw;
+    line-height: 3vh;
+    margin-bottom: 0;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple:hover {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple:hover a {
+    transform: scale(1.05);
   }
   .con5 .con5_right .con5_text.on h3 {
     opacity: 1;
@@ -1501,10 +1555,10 @@ body {
   }
   footer .footer_top .info_wrap .info img {
     width: 1.3vw;
-    transform: rotate(180deg);
+    transform: rotate(0deg);
   }
   footer .footer_top .info_wrap .info.on img {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
   }
   footer .footer_top .sns_wrap {
     width: 75%;
@@ -1533,7 +1587,7 @@ body {
     position: absolute;
     left: 5%;
     transform: trasnlateX(-5%);
-    display: none;
+    display: block;
   }
   footer .footer_bottom .bottom1 .info_slide {
     width: 100%;
@@ -1565,6 +1619,9 @@ body {
     width: 100%;
     text-align: center;
   }
+  footer .footer_bottom .bottom2 .app_wrap {
+    padding: 3vh 0;
+  }
   footer .footer_bottom .bottom2 .app_wrap .app {
     font-size: 1.2vw;
     margin-bottom: 1vh;
@@ -1572,78 +1629,6 @@ body {
   footer .footer_bottom .bottom2 .app_wrap p:nth-of-type(2) {
     font-size: 0.9vw;
     margin-bottom: 3vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download {
-    width: 20%;
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    z-index: 90;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google {
-    width: calc(50% - 1vw);
-    height: 4vh;
-    border-radius: 3vh;
-    background: #2987f0;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 3vh;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a img {
-    width: 0.8vw;
-    margin-right: 0.5vw;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a p {
-    font-size: 0.9vw;
-    line-height: 3vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google:hover {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google:hover a {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple {
-    width: calc(50% - 1vw);
-    height: 4vh;
-    border-radius: 3vh;
-    background: #2987f0;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 3vh;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a img {
-    width: 0.8vw;
-    margin-right: 0.5vw;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a p {
-    font-size: 0.9vw;
-    line-height: 3vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple:hover {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple:hover a {
-    transform: scale(1.05);
   }
 }
 /*tablet < device < pc*/
@@ -3028,7 +3013,7 @@ body {
     transition-delay: 0.3s;
   }
   .con5 .con5_right .con5_text .con5_btn {
-    width: 7vw;
+    width: 17vw;
     height: 3.7vh;
     margin: 0px auto;
     opacity: 0;
@@ -3036,25 +3021,79 @@ body {
     transition: 0.5s;
     transition-delay: 0.6s;
   }
-  .con5 .con5_right .con5_text .con5_btn a {
+  .con5 .con5_right .con5_text .con5_btn .download {
     width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 3.7vh;
-    background: #fff;
-    border: 1px solid #2987f0;
-    text-align: center;
-    line-height: 3.5vh;
-    font-size: 0.8vw;
-    color: #2987f0;
-    box-shadow: 1px 1px 1px 1px #ededed;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 90;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google {
+    width: calc(50% - 0.5vw);
+    height: 4vh;
+    border-radius: 3vh;
+    background: #09d0af;
     transition: 0.5s;
   }
-  .con5 .con5_right .con5_text .con5_btn a:hover {
-    font-size: 0.9vw;
-    transform: scale(1.1);
-    background: #2987f0;
+  .con5 .con5_right .con5_text .con5_btn .download .google a {
+    width: 100%;
+    height: 100%;
+    display: flex;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 3.5vh;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google a img {
+    width: 0.8vw;
+    margin-right: 0.5vw;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google a p {
+    font-size: 0.9vw;
+    line-height: 4vh;
+    margin-bottom: 0;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google:hover {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google:hover a {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple {
+    width: calc(50% - 0.5vw);
+    height: 4vh;
+    border-radius: 3vh;
+    background: #09d0af;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 3.5vh;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a img {
+    width: 0.8vw;
+    margin-right: 0.5vw;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a p {
+    font-size: 0.9vw;
+    line-height: 3vh;
+    margin-bottom: 0;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple:hover {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple:hover a {
+    transform: scale(1.05);
   }
   .con5 .con5_right .con5_text.on h3 {
     opacity: 1;
@@ -3112,10 +3151,10 @@ body {
   }
   footer .footer_top .info_wrap .info img {
     width: 1.3vw;
-    transform: rotate(180deg);
+    transform: rotate(0deg);
   }
   footer .footer_top .info_wrap .info.on img {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
   }
   footer .footer_top .sns_wrap {
     width: 75%;
@@ -3144,7 +3183,7 @@ body {
     position: absolute;
     left: 5%;
     transform: trasnlateX(-5%);
-    display: none;
+    display: block;
   }
   footer .footer_bottom .bottom1 .info_slide {
     width: 100%;
@@ -3176,6 +3215,9 @@ body {
     width: 100%;
     text-align: center;
   }
+  footer .footer_bottom .bottom2 .app_wrap {
+    padding: 3vh 0;
+  }
   footer .footer_bottom .bottom2 .app_wrap .app {
     font-size: 1.2vw;
     margin-bottom: 1vh;
@@ -3183,78 +3225,6 @@ body {
   footer .footer_bottom .bottom2 .app_wrap p:nth-of-type(2) {
     font-size: 0.9vw;
     margin-bottom: 3vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download {
-    width: 20%;
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    z-index: 90;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google {
-    width: calc(50% - 1vw);
-    height: 4vh;
-    border-radius: 3vh;
-    background: #2987f0;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 3vh;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a img {
-    width: 0.8vw;
-    margin-right: 0.5vw;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a p {
-    font-size: 0.9vw;
-    line-height: 3vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google:hover {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google:hover a {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple {
-    width: calc(50% - 1vw);
-    height: 4vh;
-    border-radius: 3vh;
-    background: #2987f0;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 3vh;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a img {
-    width: 0.8vw;
-    margin-right: 0.5vw;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a p {
-    font-size: 0.9vw;
-    line-height: 3vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple:hover {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple:hover a {
-    transform: scale(1.05);
   }
 }
 /*tablet*/
@@ -4533,7 +4503,7 @@ body {
     width: 95%;
     height: 85%;
     overflow: hidden;
-    border-radius: 2vw;
+    border-radius: 1vw;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -4646,7 +4616,7 @@ body {
     transition-delay: 0.3s;
   }
   .con5 .con5_right .con5_text .con5_btn {
-    width: 9vw;
+    width: 17vw;
     height: 3.7vh;
     margin: 0px auto;
     opacity: 0;
@@ -4654,25 +4624,79 @@ body {
     transition: 0.5s;
     transition-delay: 0.6s;
   }
-  .con5 .con5_right .con5_text .con5_btn a {
+  .con5 .con5_right .con5_text .con5_btn .download {
     width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 3.7vh;
-    background: #fff;
-    border: 1px solid #2987f0;
-    text-align: center;
-    line-height: 3.5vh;
-    font-size: 0.9vw;
-    color: #2987f0;
-    box-shadow: 1px 1px 1px 1px #ededed;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 90;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google {
+    width: calc(50% - 0.7vw);
+    height: 4vh;
+    border-radius: 3vh;
+    background: #09d0af;
     transition: 0.5s;
   }
-  .con5 .con5_right .con5_text .con5_btn a:hover {
-    font-size: 1vw;
-    transform: scale(1.1);
-    background: #2987f0;
+  .con5 .con5_right .con5_text .con5_btn .download .google a {
+    width: 100%;
+    height: 100%;
+    display: flex;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 3.5vh;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google a img {
+    width: 0.8vw;
+    margin-right: 0.5vw;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google a p {
+    font-size: 0.9vw;
+    line-height: 4vh;
+    margin-bottom: 0;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google:hover {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google:hover a {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple {
+    width: calc(50% - 0.7vw);
+    height: 4vh;
+    border-radius: 3vh;
+    background: #09d0af;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 3.5vh;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a img {
+    width: 0.8vw;
+    margin-right: 0.5vw;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a p {
+    font-size: 0.9vw;
+    line-height: 3vh;
+    margin-bottom: 0;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple:hover {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple:hover a {
+    transform: scale(1.05);
   }
   .con5 .con5_right .con5_text.on h3 {
     opacity: 1;
@@ -4730,10 +4754,10 @@ body {
   }
   footer .footer_top .info_wrap .info img {
     width: 1.5vw;
-    transform: rotate(180deg);
+    transform: rotate(0deg);
   }
   footer .footer_top .info_wrap .info.on img {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
   }
   footer .footer_top .sns_wrap {
     width: 90%;
@@ -4762,7 +4786,7 @@ body {
     position: absolute;
     left: 5%;
     transform: trasnlateX(-5%);
-    display: none;
+    display: block;
   }
   footer .footer_bottom .bottom1 .info_slide {
     width: 100%;
@@ -4794,6 +4818,9 @@ body {
     width: 100%;
     text-align: center;
   }
+  footer .footer_bottom .bottom2 .app_wrap {
+    padding: 3vh 0;
+  }
   footer .footer_bottom .bottom2 .app_wrap .app {
     font-size: 14px;
     margin-bottom: 1vh;
@@ -4801,78 +4828,6 @@ body {
   footer .footer_bottom .bottom2 .app_wrap p:nth-of-type(2) {
     font-size: 12px;
     margin-bottom: 3vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download {
-    width: 23%;
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    z-index: 90;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google {
-    width: calc(50% - 1vw);
-    height: 4vh;
-    border-radius: 3vh;
-    background: #2987f0;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 3vh;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a img {
-    width: 0.9vw;
-    margin-right: 0.5vw;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a p {
-    font-size: 1vw;
-    line-height: 3vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google:hover {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google:hover a {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple {
-    width: calc(50% - 1vw);
-    height: 4vh;
-    border-radius: 3vh;
-    background: #2987f0;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 3vh;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a img {
-    width: 0.9vw;
-    margin-right: 0.5vw;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a p {
-    font-size: 1vw;
-    line-height: 3vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple:hover {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple:hover a {
-    transform: scale(1.05);
   }
 }
 /*mobile*/
@@ -6157,7 +6112,7 @@ body {
     width: 95%;
     height: 85%;
     overflow: hidden;
-    border-radius: 2vw;
+    border-radius: 0.8vw;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -6226,7 +6181,7 @@ body {
     transition-delay: 0.3s;
   }
   .con5 .con5_right .con5_text .con5_btn {
-    width: 11vw;
+    width: 20vw;
     height: 3.7vh;
     margin: 0px auto;
     opacity: 0;
@@ -6234,25 +6189,79 @@ body {
     transition: 0.5s;
     transition-delay: 0.6s;
   }
-  .con5 .con5_right .con5_text .con5_btn a {
+  .con5 .con5_right .con5_text .con5_btn .download {
     width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 3.7vh;
-    background: #fff;
-    border: 1px solid #2987f0;
-    text-align: center;
-    line-height: 3.5vh;
-    font-size: 11px;
-    color: #2987f0;
-    box-shadow: 1px 1px 1px 1px #ededed;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 90;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google {
+    width: calc(50% - 0.7vw);
+    height: 4vh;
+    border-radius: 3vh;
+    background: #09d0af;
     transition: 0.5s;
   }
-  .con5 .con5_right .con5_text .con5_btn a:hover {
-    font-size: 12px;
-    transform: scale(1.1);
-    background: #2987f0;
+  .con5 .con5_right .con5_text .con5_btn .download .google a {
+    width: 100%;
+    height: 100%;
+    display: flex;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 3.5vh;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google a img {
+    width: 1vw;
+    margin-right: 0.5vw;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google a p {
+    font-size: 1.1vw;
+    line-height: 4vh;
+    margin-bottom: 0;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google:hover {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google:hover a {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple {
+    width: calc(50% - 0.7vw);
+    height: 4vh;
+    border-radius: 3vh;
+    background: #09d0af;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 3.5vh;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a img {
+    width: 1vw;
+    margin-right: 0.5vw;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a p {
+    font-size: 1.1vw;
+    line-height: 3vh;
+    margin-bottom: 0;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple:hover {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple:hover a {
+    transform: scale(1.05);
   }
   .con5 .con5_right .con5_text.on h3 {
     opacity: 1;
@@ -6357,6 +6366,9 @@ body {
     width: 100%;
     text-align: center;
   }
+  footer .footer_bottom .bottom2 .app_wrap {
+    padding: 2vh 0;
+  }
   footer .footer_bottom .bottom2 .app_wrap .app {
     font-size: 14px;
     margin-bottom: 1vh;
@@ -6364,78 +6376,6 @@ body {
   footer .footer_bottom .bottom2 .app_wrap p:nth-of-type(2) {
     font-size: 12px;
     margin-bottom: 2vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download {
-    width: 30%;
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    z-index: 90;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google {
-    width: calc(50% - 1vw);
-    height: 4vh;
-    border-radius: 3vh;
-    background: #2987f0;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 3vh;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a img {
-    width: 1.5vw;
-    margin-right: 0.5vw;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a p {
-    font-size: 10px;
-    line-height: 3vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google:hover {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google:hover a {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple {
-    width: calc(50% - 1vw);
-    height: 4vh;
-    border-radius: 3vh;
-    background: #2987f0;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 3vh;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a img {
-    width: 1.5vw;
-    margin-right: 0.5vw;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a p {
-    font-size: 10px;
-    line-height: 3vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple:hover {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple:hover a {
-    transform: scale(1.05);
   }
 }
 /*iphone 12pro*/
@@ -7709,7 +7649,7 @@ body {
     width: 90%;
     height: 85%;
     overflow: hidden;
-    border-radius: 2vw;
+    border-radius: 1vw;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -7778,7 +7718,7 @@ body {
     transition-delay: 0.3s;
   }
   .con5 .con5_right .con5_text .con5_btn {
-    width: 18vw;
+    width: 32vw;
     height: 3.5vh;
     margin: 0px auto;
     opacity: 0;
@@ -7786,24 +7726,79 @@ body {
     transition: 0.5s;
     transition-delay: 0.6s;
   }
-  .con5 .con5_right .con5_text .con5_btn a {
+  .con5 .con5_right .con5_text .con5_btn .download {
     width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 3.5vh;
-    background: #fff;
-    border: 1px solid #2987f0;
-    text-align: center;
-    line-height: 3.5vh;
-    font-size: 10px;
-    color: #2987f0;
-    box-shadow: 1px 1px 1px 1px #ededed;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 90;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google {
+    width: calc(50% - 0.7vw);
+    height: 3vh;
+    border-radius: 3vh;
+    background: #09d0af;
     transition: 0.5s;
   }
-  .con5 .con5_right .con5_text .con5_btn a:hover {
-    transform: scale(1.1);
-    background: #2987f0;
+  .con5 .con5_right .con5_text .con5_btn .download .google a {
+    width: 100%;
+    height: 100%;
+    display: flex;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 2.8vh;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google a img {
+    width: 1.5vw;
+    margin-right: 0.5vw;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google a p {
+    font-size: 1.8vw;
+    line-height: 3vh;
+    margin-bottom: 0;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google:hover {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .google:hover a {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple {
+    width: calc(50% - 0.7vw);
+    height: 3vh;
+    border-radius: 3vh;
+    background: #09d0af;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 2.5vh;
+    transition: 0.5s;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a img {
+    width: 1.5vw;
+    margin-right: 0.5vw;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple a p {
+    font-size: 1.8vw;
+    line-height: 3vh;
+    margin-bottom: 0;
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple:hover {
+    transform: scale(1.05);
+  }
+  .con5 .con5_right .con5_text .con5_btn .download .apple:hover a {
+    transform: scale(1.05);
   }
   .con5 .con5_right .con5_text.on h3 {
     opacity: 1;
@@ -7875,6 +7870,9 @@ body {
     width: 100%;
     text-align: center;
   }
+  footer .footer_bottom .bottom2 .app_wrap {
+    padding: 1vh 0;
+  }
   footer .footer_bottom .bottom2 .app_wrap .app {
     font-size: 12px;
     margin-bottom: 1vh;
@@ -7882,77 +7880,5 @@ body {
   footer .footer_bottom .bottom2 .app_wrap p:nth-of-type(2) {
     font-size: 10px;
     margin-bottom: 2vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download {
-    width: 50%;
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    z-index: 90;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google {
-    width: calc(50% - 1vw);
-    height: 4vh;
-    border-radius: 3vh;
-    background: #2987f0;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 3vh;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a img {
-    width: 1.5vw;
-    margin-right: 0.5vw;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google a p {
-    font-size: 10px;
-    line-height: 3vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google:hover {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .google:hover a {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple {
-    width: calc(50% - 1vw);
-    height: 4vh;
-    border-radius: 3vh;
-    background: #2987f0;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 3vh;
-    transition: 0.5s;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a img {
-    width: 1.5vw;
-    margin-right: 0.5vw;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple a p {
-    font-size: 10px;
-    line-height: 3vh;
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple:hover {
-    transform: scale(1.05);
-  }
-  footer .footer_bottom .bottom2 .app_wrap .download .apple:hover a {
-    transform: scale(1.05);
   }
 }
